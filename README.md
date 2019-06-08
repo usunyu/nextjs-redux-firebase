@@ -1,16 +1,12 @@
-# nextjs-redux-firebase-authentication
+# nextjs-redux-firebase
 
-[![Build Status](https://travis-ci.org/taming-the-state-in-react/nextjs-redux-firebase-authentication.svg?branch=master)](https://travis-ci.org/taming-the-state-in-react/nextjs-redux-firebase-authentication) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/taming-the-state-in-react/nextjs-redux-firebase-authentication.svg)](https://greenkeeper.io/)
-
-* Found in [Taming the State in React](https://roadtoreact.com/course-details?courseId=TAMING_THE_STATE)
-* [Live](https://react-firebase-authentication.wieruch.com/)
-* [Tutorial](https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/)
+* [Live Demo](https://react-firebase-authentication.wieruch.com/)
 
 ## Features
 
 * uses:
   * React + NextJs
-  * firebase 4.3.1
+  * firebase
   * redux
 * features:
   * Sign In
@@ -23,10 +19,10 @@
 
 ## Installation
 
-* `git clone git@github.com:taming-the-state-in-react/nextjs-redux-firebase-authentication.git`
-* `cd nextjs-redux-firebase-authentication`
-* `npm install`
-* `npm run dev`
+* `git clone git@github.com:usunyu/nextjs-redux-firebase.git`
+* `cd nextjs-redux-firebase`
+* `yarn`
+* `yarn dev`
 * visit http://localhost:3000/
 * Use your own Firebase Credentials
 
