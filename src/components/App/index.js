@@ -12,23 +12,9 @@ const App = ({ children }) => (
     {children}
     <hr />
     <span>
-      Found in{" "}
-      <a href="https://roadtoreact.com/course-details?courseId=TAMING_THE_STATE">
-        Taming the State in React
-      </a>
-    </span>{" "}
-    |{" "}
-    <span>
       Star the{" "}
-      <a href="https://github.com/rwieruch/nextjs-redux-firebase-authentication">
+      <a href="https://github.com/usunyu/nextjs-redux-firebase">
         Repository
-      </a>
-    </span>{" "}
-    |{" "}
-    <span>
-      Receive a{" "}
-      <a href="https://www.getrevue.co/profile/rwieruch">
-        Developer's Newsletter
       </a>
     </span>
     <style jsx>{`
