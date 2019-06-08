@@ -63,43 +63,55 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={username}
-          onChange={event =>
-            this.setState(updateByPropertyName("username", event.target.value))
-          }
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={passwordOne}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordOne", event.target.value)
-            )
-          }
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordTwo", event.target.value)
-            )
-          }
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">
+        <div className="input-field">
+          <input
+            id="username"
+            value={username}
+            onChange={event =>
+              this.setState(updateByPropertyName("username", event.target.value))
+            }
+            type="text"
+          />
+          <label htmlFor="username">Full Name</label>
+        </div>
+        <div className="input-field">
+          <input
+            id="email"
+            value={email}
+            onChange={event =>
+              this.setState(updateByPropertyName("email", event.target.value))
+            }
+            type="email"
+          />
+          <label htmlFor="email">Email Address</label>
+        </div>
+        <div className="input-field">
+          <input
+            id="password"
+            value={passwordOne}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("passwordOne", event.target.value)
+              )
+            }
+            type="password"
+          />
+          <label htmlFor="password">Password</label>
+        </div>
+        <div className="input-field">
+          <input
+            id="confirm-password"
+            value={passwordTwo}
+            onChange={event =>
+              this.setState(
+                updateByPropertyName("passwordTwo", event.target.value)
+              )
+            }
+            type="password"
+          />
+          <label htmlFor="confirm-password">Confirm Password</label>
+        </div>
+        <button disabled={isInvalid} type="submit" className="btn waves-effect waves-light">
           Sign Up
         </button>
 

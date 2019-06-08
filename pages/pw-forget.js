@@ -50,15 +50,19 @@ class PasswordForgetForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={this.state.email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
+        <div className="input-field">
+          <input
+            id="email"
+            className="validate"
+            value={this.state.email}
+            onChange={event =>
+              this.setState(updateByPropertyName("email", event.target.value))
+            }
+            type="email"
+          />
+          <label htmlFor="email">Email Address</label>
+        </div>
+        <button disabled={isInvalid} type="submit" className="btn waves-effect waves-light">
           Reset My Password
         </button>
 

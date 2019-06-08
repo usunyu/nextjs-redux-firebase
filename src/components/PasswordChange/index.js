@@ -46,23 +46,30 @@ class PasswordChangeForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={passwordOne}
-          onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
-          type="password"
-          placeholder="New Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
-          type="password"
-          placeholder="Confirm New Password"
-        />
-        <button disabled={isInvalid} type="submit">
+        <div className="input-field">
+          <input
+            id="new-password"
+            className="validate"
+            value={passwordOne}
+            onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
+            type="password"
+          />
+          <label htmlFor="password">New Password</label>
+        </div>
+        <div className="input-field">
+          <input
+            id="confirm-password"
+            value={passwordTwo}
+            onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
+            type="password"
+          />
+          <label htmlFor="confirm-password">Confirm New Password</label>
+        </div>
+        <button disabled={isInvalid} type="submit" className="btn waves-effect waves-light">
           Reset My Password
         </button>
 
-        { error && <p>{error.message}</p> }
+        {error && <p>{error.message}</p>}
       </form>
     );
   }

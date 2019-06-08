@@ -6,26 +6,46 @@ import * as routes from '../../constants/routes';
 import SignOutButton from '../SignOut';
 
 const Navigation = ({ authUser }) =>
-  <div>
-    { authUser
-        ? <NavigationAuth />
-        : <NavigationNonAuth />
+  <React.Fragment>
+    {authUser
+      ? <NavigationAuth />
+      : <NavigationNonAuth />
     }
-  </div>
+  </React.Fragment>
 
 const NavigationAuth = () =>
-  <ul>
-    <li><Link href={routes.LANDING}><a>Landing</a></Link></li>
-    <li><Link href={routes.HOME}><a>Home</a></Link></li>
-    <li><Link href={routes.ACCOUNT}><a>Account</a></Link></li>
-    <li><SignOutButton /></li>
-  </ul>
+  <nav>
+    <div className="nav-wrapper blue">
+      <a href="/" className="brand-logo hide-on-med-and-down">nextjs-redux-firebase</a>
+      <ul className="right">
+        <li><Link href={routes.LANDING}><a>Landing</a></Link></li>
+        <li><Link href={routes.HOME}><a>Home</a></Link></li>
+        <li><Link href={routes.ACCOUNT}><a>Account</a></Link></li>
+        <li><SignOutButton /></li>
+      </ul>
+    </div>
+    <style jsx>{`
+      .nav-wrapper {
+        padding: 0px 20px;
+      }
+    `}</style>
+  </nav>
 
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link href={routes.LANDING}><a>Landing</a></Link></li>
-    <li><Link href={routes.SIGN_IN}><a>Sign In</a></Link></li>
-  </ul>
+  <nav>
+    <div className="nav-wrapper blue">
+      <a href="/" className="brand-logo hide-on-med-and-down">nextjs-redux-firebase</a>
+      <ul className="right">
+        <li><Link href={routes.LANDING}><a>Landing</a></Link></li>
+        <li><Link href={routes.SIGN_IN}><a>Sign In</a></Link></li>
+      </ul>
+    </div>
+    <style jsx>{`
+      .nav-wrapper {
+        padding: 0px 20px;
+      }
+    `}</style>
+  </nav>
 
 const mapStateToProps = (state) => ({
   authUser: state.sessionState.authUser,

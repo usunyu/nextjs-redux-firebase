@@ -56,23 +56,29 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event =>
-            this.setState(updateByPropertyName("password", event.target.value))
-          }
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
+        <div className="input-field">
+          <input
+            id="email"
+            value={email}
+            onChange={event =>
+              this.setState(updateByPropertyName("email", event.target.value))
+            }
+            type="email"
+          />
+          <label htmlFor="email">Email Address</label>
+        </div>
+        <div className="input-field">
+          <input
+            id="password"
+            value={password}
+            onChange={event =>
+              this.setState(updateByPropertyName("password", event.target.value))
+            }
+            type="password"
+          />
+          <label htmlFor="password">Password</label>
+        </div>
+        <button disabled={isInvalid} type="submit" className="btn waves-effect waves-light">
           Sign In
         </button>
 

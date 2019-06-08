@@ -6,12 +6,13 @@ import withAuthentication from "../Session/withAuthentication";
 import withAuthorization from "../Session/withAuthorization";
 
 const App = ({ children }) => (
-  <div className="app">
+  <React.Fragment>
     <Navigation />
+    <div className="app">
+      {children}
+    </div>
     <hr />
-    {children}
-    <hr />
-    <span>
+    <span className="footer">
       Star the{" "}
       <a href="https://github.com/usunyu/nextjs-redux-firebase">
         Repository
@@ -21,8 +22,11 @@ const App = ({ children }) => (
       .app {
         margin: 20px;
       }
+      .footer {
+        margin: 0px 20px;
+      }
     `}</style>
-  </div>
+  </React.Fragment>
 );
 const AppWithAuthentication = compose(
   withAuthentication,
