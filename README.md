@@ -1,6 +1,6 @@
 # nextjs-redux-firebase
 
-* [Live Demo](https://react-firebase-authentication.wieruch.com/)
+* [Live Demo](https://nextjs-redux-firebase.usunyu.now.sh/)
 
 ## Features
 
