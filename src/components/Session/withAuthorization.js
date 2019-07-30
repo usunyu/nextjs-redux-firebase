@@ -7,11 +7,15 @@ import * as routes from '../../constants/routes';
 const withAuthorization = (needsAuthorization) => (Component) => {
   class WithAuthorization extends React.Component {
     componentDidMount() {
-      firebase.auth.onAuthStateChanged(authUser => {
+      this.unsubscribeFirebase = firebase.auth.onAuthStateChanged(authUser => {
         if (!authUser && needsAuthorization) {
           Router.push(routes.SIGN_IN)
         }
       });
+    }
+
+    componentWillUnmount() {
+      this.unsubscribeFirebase();
     }
 
     render() {
