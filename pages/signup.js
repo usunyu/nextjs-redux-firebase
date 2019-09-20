@@ -3,7 +3,7 @@ import Link from "next/link";
 import Router from "next/router";
 
 import { AppWithAuthentication } from "../src/components/App";
-import { auth, db } from "../src/firebase";
+import { auth, firestore } from "../src/firebase";
 import * as routes from "../src/constants/routes";
 
 const SignUpPage = () => (
@@ -39,7 +39,7 @@ class SignUpForm extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         // Create a user in your own accessible Firebase Database too
-        db.doCreateUser(authUser.user.uid, username, email)
+        firestore.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
             Router.push(routes.HOME);

@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { AppWithAuthorization } from "../src/components/App";
-import { db } from "../src/firebase";
+import { firestore } from "../src/firebase";
 
 class HomePage extends Component {
   componentDidMount() {
     const { onSetUsers } = this.props;
 
-    db.onceGetUsers().then(
+    firestore.onceGetUsers().then(
       snapshot => onSetUsers(snapshot.docs.map(doc => doc.data()))
     );
   }

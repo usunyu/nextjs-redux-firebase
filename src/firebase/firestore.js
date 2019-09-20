@@ -1,15 +1,15 @@
-import { db } from './firebase';
+import { firestore } from './firebase';
 
 // User API
 
 export const doCreateUser = (id, username, email) =>
-  db.collection('users').doc(id).set({
+  firestore.collection('users').doc(id).set({
     id,
     username,
     email
   });
 
 export const onceGetUsers = () =>
-  db.collection('users').get();
+  firestore.collection('users').get();
 
 // Other db APIs ...
